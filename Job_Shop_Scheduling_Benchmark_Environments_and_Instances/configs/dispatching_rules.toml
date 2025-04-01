@@ -1,0 +1,32 @@
+[instance]
+online_arrivals = false         # false for static instance (from data) or true for online job arrivals
+#problem_instance = "/fjsp_sdst/fattahi/Fattahi_setup_20.fjs"  # static instance (no online arrivals)
+#problem_instance = "/fjsp/conthereum/conthereum-ms-100.fjs"
+problem_instance = "/fjsp_conthereum/conthereum-ms-100-conflict.fjs"
+dispatching_rule = "CONTHEREUM_D"  # FIFO: First In First Out, MOR: Most Operation Remaining, LOR: Least Operations
+                          # Remaining, MWR: Most Work Remaining, LWR: Least Work Remaining,
+                            # SPT: Shortest Processing Time (Note: can be just with machine_assignment_rule = "SPT" )
+                          # CONTHEREUM_D
+
+machine_assignment_rule = "CONTHEREUM_M" # SPT: Shortest Processing Time, EET: Earliest End Time,
+                            # CONTHEREUM_M
+
+[online_arrival_details]        # Only needed for_online arrivals = true
+number_total_machines = 3       # number of machines
+inter_arrival_time = 0         # inter_arrival_time between jobs
+simulation_time = 500           # simulation duration time
+min_nr_operations_per_job = 2   # min number of operations per online arrived job
+max_nr_operations_per_job = 7   # max number of operations per online arrived job
+min_duration_per_operation = 2  # min duration of online arrived operation
+max_duration_per_operation = 40 # max duration of online arrived operation
+
+[output]
+logbook = true                  # display logbook during search
+show_precedences = false         # draw precedence relations graph of the problem instance
+show_gantt = false               # draw ganttchart of found solution
+save_gantt = false               # save ganttchart to file
+save_results = false             # save results to file
+exp_name = ""                   # name of the experiment, used for saving results.
+                                # If empty (""), the name of the problem instance is used
+folder = ""                     # folder to save results, used for saving results.
+                                # If empty (""), the results are saved to the current working directory.

@@ -1,0 +1,8 @@
+{
+    "instance": "/fjsp/conthereum/conthereum.fjs",
+    "makespan": 315000,
+    "ngen": 10,
+    "population_size": 10,
+    "crossover_rate": 0.7,
+    "mutation_rate": 0.1
+}
